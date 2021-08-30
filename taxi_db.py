@@ -47,13 +47,13 @@ class Order(Base):
     address_to = Column(String(50), nullable=False, comment="Адрес высадки")
     client_id = Column(
         Integer,
-        ForeignKey("clients.id"),
+        ForeignKey("clients.id", ondelete="CASCADE"),
         nullable=False,
         comment="Идентификатор клиента",
     )
     driver_id = Column(
         Integer,
-        ForeignKey("drivers.id"),
+        ForeignKey("drivers.id", ondelete="CASCADE"),
         nullable=False,
         comment="Идентификатор водителя",
     )
